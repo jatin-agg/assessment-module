@@ -1,0 +1,34 @@
+<!-- Page Content -->
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+
+    <!-- Page Heading -->
+    <div>
+        <h1 class="my-4">Assessments List</h1>
+        <h5>Add, edit and delete your assessments</h5>
+        <button type="button" class="btn btn-primary" (click)="addAssessment()">Add</button>
+    </div>
+  
+    <div class="row" >
+      <div class="col-lg-6 mb-4" *ngFor = "let mocks of MockData">
+        <div class="card h-100">
+          <div class="card-body">
+            <h4 class="card-title">
+              {{mocks.title}}
+            </h4>
+            <p class="card-text">{{mocks.description}}</p>
+            <button type="button" class="btn btn-primary" (click)="updateAssessment(mocks.id)">Edit</button>
+            <button type="button" class="btn btn-danger" (click) = deleteAssessments(mocks.id)>Delete</button>
+        </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+  
+   
+  </div>
+  <!-- /.container -->
+  

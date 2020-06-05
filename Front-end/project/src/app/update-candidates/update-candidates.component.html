@@ -1,0 +1,68 @@
+
+<div class="container">
+    <br>
+    <br>
+    <br>
+    <br>
+      <div class="alert alert-warning" *ngIf="todoForm.dirty && todoForm.invalid">Enter valid values</div>
+      <div class="alert alert-warning" *ngIf="todoForm.dirty && name.invalid">Enter your Name</div>
+      <div class="alert alert-warning" *ngIf="todoForm.dirty && age.invalid">Enter your Age</div>
+      <div class="alert alert-warning" *ngIf="todoForm.dirty && email.invalid">Enter your Email</div>
+      <div class="alert alert-warning" *ngIf="todoForm.dirty && city.invalid">Enter your City</div>
+      <div class="alert alert-warning" *ngIf="todoForm.dirty && skill.invalid">Enter your Skill</div>
+      <div class="alert alert-warning" *ngIf="todoForm.dirty && assignment_score.invalid">Enter your Assignment Score</div>
+      <div class="alert alert-warning" *ngIf="todoForm.dirty && test_score.invalid">Enter your Test Score</div>
+      
+      <form (ngSubmit)="!todoForm.invalid && saveCandidates()" #todoForm="ngForm">
+        <fieldset class="form-group">
+            <label>Full Name</label>
+            <input type="text" #name="ngModel" 
+                  [(ngModel)]="candidate.name" class="form-control" 
+                      name="name" required="required" >
+          </fieldset>
+    
+          <fieldset class="form-group">
+            <label>Age</label>
+            <input type="number" #age="ngModel" 
+                  [(ngModel)]="candidate.age" class="form-control" 
+                      name="age" required="required" >
+          </fieldset>
+
+          <fieldset class="form-group">
+            <label>Email</label>
+            <input type="email" #email="ngModel" 
+                  [(ngModel)]="candidate.email" class="form-control" 
+                      name="email" required="required" >
+          </fieldset>
+
+          <fieldset class="form-group">
+            <label>City</label>
+            <input type="text" #city="ngModel" 
+                  [(ngModel)]="candidate.city" class="form-control" 
+                      name="city" required="required" >
+          </fieldset>
+
+          <fieldset class="form-group">
+            <label>Skills</label>
+            <input type="text" #skill="ngModel" 
+                  [(ngModel)]="candidate.skills" class="form-control" 
+                      name="skill" required="required" >
+          </fieldset>
+
+          <fieldset class="form-group">
+            <label>Assignment Score</label>
+            <input type="number" #assignment_score="ngModel" 
+                  [(ngModel)]="candidate.assignment_score" class="form-control" 
+                      name="assignment_score" required="required" >
+          </fieldset>
+
+          <fieldset class="form-group">
+            <label>Test Score</label>
+            <input type="number" #test_score="ngModel" 
+                  [(ngModel)]="candidate.test_score" class="form-control" 
+                      name="test_score" required="required" >
+          </fieldset>
+    
+        <button type="submit" class="btn btn-success">Save</button>
+      </form>  
+    </div>

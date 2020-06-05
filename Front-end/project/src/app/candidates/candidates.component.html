@@ -1,0 +1,58 @@
+<!-- Editable table -->
+<br>
+<br>
+<br>
+<br>
+<div class="card">
+    <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Candidate Details</h3>
+    <div class="card-body">
+      <div id="table" class="table-editable">
+        <span class="table-add float-right mb-3 mr-2">
+            <button type="button" class="btn btn-primary" (click)="addCandidates()">Add</button>
+        </span>
+        <table class="table table-bordered table-responsive-md table-striped text-center">
+          <tr>
+            <th class="text-center">Full Name</th>
+            <th class="text-center">Age</th>
+            <th class="text-center">Email</th>
+            <th class="text-center">City</th>
+            <th class="text-center">Skills</th>
+            <th class="text-center">Score</th>
+          </tr>
+          <tr *ngFor="let candidate of MockData">
+            <td>
+              <span>{{candidate.name}}</span>
+            </td>
+            <td>
+              <span >{{candidate.age }}</span>
+            </td>
+            <td>
+              <span >{{candidate.email}}</span>
+            </td>
+            <td>
+              <span >{{candidate.city}}</span>
+            </td>
+            <td>
+              <span >{{candidate.skills}}</span>
+            </td>
+            <td>
+                <span >{{(candidate.assignment_score)*0.3 + (candidate.test_score)*0.7}}</span>
+              </td>
+
+            <td>
+                <span class="table-update">
+                  <button type="button"  color="danger" rounded="true" size="sm" class="my-0" class = "btn btn-primary" (click)="updateCandidates(candidate.id)">Edit</button>
+                </span>
+              </td>
+            
+            <td>
+              <span class="table-remove">
+                <button type="button"  mdbBtn color="danger" rounded="true" size="sm" class="my-0" class = "btn btn-danger"(click)="deleteCandidates(candidate.id)">Remove</button>
+              </span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- Editable table -->

@@ -1,0 +1,28 @@
+
+<div class="container">
+<br>
+<br>
+<br>
+<br>
+  <div class="alert alert-warning" *ngIf="todoForm.dirty && todoForm.invalid">Enter valid values</div>
+  <div class="alert alert-warning" *ngIf="todoForm.dirty && title.invalid">Enter valid Title</div>
+  <div class="alert alert-warning" *ngIf="todoForm.dirty && description.invalid">Enter atleast 5 characters in Description</div>
+  
+  <form (ngSubmit)="!todoForm.invalid && saveAssessment()" #todoForm="ngForm">
+    <fieldset class="form-group">
+        <label>Title</label>
+        <input type="text" #title="ngModel" 
+              [(ngModel)]="assessment.title" class="form-control" 
+                  name="title" required="required" minlength="5">
+      </fieldset>
+
+    <fieldset class="form-group">
+        <label>Description</label>
+        <input type="description" #description="ngModel" 
+              [(ngModel)]="assessment.description" class="form-control" 
+                  name="description" required="required" minlength="5">
+      </fieldset>
+
+    <button type="submit" class="btn btn-success">Save</button>
+  </form>  
+</div>
